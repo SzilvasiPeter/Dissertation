@@ -53,3 +53,8 @@ _Szakdolgozat_
 * Library-k, szabványok linkjei
 * NLP-s, QA-s könyvek
 * Aktuális cikkek hivatkozásai
+
+## Források
+
+* http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+* http://www.aclweb.org/anthology/W/W04/W04-1013.pdf
