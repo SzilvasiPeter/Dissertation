@@ -6,11 +6,11 @@ _Szakdolgozat_
 
 * Motiváció, a kiválasztott témakör népszerűsítése 1-2 oldalban.
 
-## Answer Prediction
+## Kínai karakterek felismerése konvolúciós neurális hálók használatával
 
 * A témakör aktualitásának, jelenlegi eredményeinek bemutatása
-* Természetes nyelvfeldolgozásról néhány dolog
-* Smart Assistens-ekről egy rövid összefoglalás
+* Karakter feldolgozás néhány dolog
+* OCR-ről egy rövid összefoglalás
 * A problémakörön belül a megoldandó részproblémák
 
 ## Mintaadathalmazok gyűjtése és tisztítása
@@ -21,16 +21,17 @@ _Szakdolgozat_
 * Annotáció módja, elérhetősége
 * Az így kapott, rendelkezésre álló adathalmazok
 
-## A kérdés megválaszolásának folyamata
+## A karakter felismerésének folyamata
 
 * Egy összefoglaló jellegű ábra
 * A részlépések külön pontokban kifejtve
 
-## Algoritmusok, heurisztikák
+## Algoritmusok
 
-* Metrikák, normák
-* Paramétertér, keresési módszerek
-* Becslések, heurisztikák
+* Neurális hálózat általános beveztő
+* Konvoluciós neurális hálózat, (kernel, fully connecter layer, stb..?)
+* Megvalósítás (kód)
+* Működés bemutatása vizuálisan
 
 ## Az elkészült alkalmazás/library
 
@@ -41,20 +42,24 @@ _Szakdolgozat_
 ## Tesztek
 
 * A módszer eredményességének bemutatása
-* Ábrák, táblázatok, összehasonlítások, paraméterezések
+* Teszt adat halmaz kiprobálása
+* Különböző eredmények magyarázata
 
 ## Összegzés
 
+* Tapasztalatok összegzése
 * Az elért eredmények rövid szöveges összegzése (1-2 oldal)
+* Jövőbeni fejlesztési lehetőségek(fuzzy rendszer -> felhasználó barát)
 
 ## Hivatkozások
 
 * Mintaadatok elérhetőségei
 * Library-k, szabványok linkjei
-* NLP-s, QA-s könyvek
+* Kép, karakter feldolgozás könyvek
 * Aktuális cikkek hivatkozásai
 
 ## Források
 
-* http://colah.github.io/posts/2015-08-Understanding-LSTMs/
-* http://www.aclweb.org/anthology/W/W04/W04-1013.pdf
+*
+*
+*
