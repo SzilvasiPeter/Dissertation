@@ -1,4 +1,4 @@
-# Karakterfelismerés
+# Karakterek felismerése alakjellemzők alapján
 
 _Szakdolgozat_
 
