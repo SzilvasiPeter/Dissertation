@@ -1,4 +1,4 @@
-# Answer Open-Domain Questions
+# Karakterfelismerés
 
 _Szakdolgozat_
 
