@@ -1,0 +1,98 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1. Bevezetés &#8212; Dissertation  dokumentáció</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="prev" title="Welcome to Dissertation’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bevezetes">
+<h1>1. Bevezetés<a class="headerlink" href="#bevezetes" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Napjainkban egyre inkább megfigyelhető, hogy az informatika két ága, a képfeldolgozás és a mesterséges intelligencia több alkalmazási területen is egybefonódik. Ez főként azzal magyarázható, hogy a képfeldolgozásban olyan új ötletek és célok fogalmazódnak meg, amelyek megvalósításához már nem elegendőek az egzakt matematikai képleteken alapuló képfeldolgozási módszerek. Ezen területeken csak olyan módon érhetünk el tényleges eredményeket, ha megpróbálunk valamiféle logikát, gondolkodást és fejlődőképességet vinni a programjainkba.</p>
+<p>Ha túllépünk a képfeldolgozásban alapfeladatnak számító képjavítási célokon és elkezdjük a képen lévő információk vizsgálatát, hamarosan azzal a ténnyel szembesülünk, hogy a feladatok összetettsége megköveteli az eddig alkalmazott módszerek kiegészítését, illetve átgondolását. Abban az esetben, amikor egy képen négyzeteket, köröket vagy egyéb egyszerű alakzatokat akarunk felfedezni, viszonylag könnyű dolgunk van, mivel ezek leginkább méretben, színben vagy elforgatásban különbözhetnek. Azonban, ha a probléma ennél jóval bonyolultabb, mondjuk arcokat keresünk a képen vagy karaktereket akarunk felismerni, akkor már sokkal adaptívabb és rugalmasabb rendszerre van szükségünk.</p>
+<p>Az írásfelismerés fontossága többek között abban rejlik, hogy az írásunk szinte olyan pontossággal azonosít minket, mint az ujjlenyomatunk vagy a DNS-ünk, sőt, esetenként jobban is, hiszen még az egypetéjű ikrekre sem jellemző, hogy tökéletesen azonos lenne az írásképük, míg ez a DNS-szerkezetükre és az ujjlenyomatukra teljesül.</p>
+<p>A kézírást már régóta használják azonosítási célokra az informatikában is. Az első aláírásfelismerő rendszert 1965-ben fejlesztették ki, ezt pedig további fejlesztések követték. A Magyar Grafológiai Társaság például saját aláírás-felismerő célhardverrel is rendelkezik. Az aláírások felismerése azonban még nem okoz akkora nehézséget, mint a karakterfelismerés, mivel az ember aláírásában az azonosságokat vizsgáljuk és nem törődünk azzal, hogy ténylegesen milyen betűkből áll össze a név. Amikor azonban az egyes betűket kell felismernünk, figyelembe kell vennünk, hogy emberenként, sőt, még az egyes embereknél időben is szembetűnő eltérések tapasztalhatók az írásképben. Ezt figyelembe véve pedig nem állíthatjuk, hogy egy betű kinézetét egyetlen vagy akár egy tucat mintapélda alapján meg tudjuk határozni, és ezek segítségével egy leírt karaktert valamilyen osztályba be tudunk sorolni.</p>
+<p>Ahhoz, hogy a karakterfelismeréshez megfelelő programot készíthessünk, meg kell vizsgálnunk, hogy mi magunk hogyan állapítjuk meg egy leírt betűről, hogy pontosan micsoda. Az emberi agyban az egyes betűkhöz különböző tulajdonságok rögzülnek, amelyeket viszonylag könnyedén és gyorsan vagyunk képesek alakítani a konkrét feladat jellemzőihez. Ezt az alkalmazkodási képességet azonban már nem lehet pusztán képfeldolgozási algoritmusokkal leprogramozni.</p>
+<p>Az emberi agy modellezése egy olyan terület, amely a tudomány több területén is régóta foglalkoztatja a kutatókat. Az informatikában az agy működését úgynevezett neurális hálókkal vagy hálózatokkal szimuláljuk, amelyek belső működése komoly statisztikai alapokon nyugszik. A neurális hálózatok nagy előnye, hogy képesek alkalmazkodni az adott problémához és úgynevezett tanuló rendszerek, vagyis lehetőséget biztosítanak arra, hogy az adott területen javítsuk a teljesítményüket. A neurális hálózatok egyik dinamikusan fejlődő felhasználási területe az optikai karakterfelismerés (OCR), melynek célkitűzése a nyomtatott vagy írott szövegek karaktereinek felismerése. Az ilyen rendszerek működésénél a képfeldolgozási módszereket előfeldolgozásra, a hálózat bemenetének előállítására használjuk, míg a tényleges „felismerést”, osztályozást a neurális háló végzi. Ezáltal ezek a rendszerek inkább tekinthetők mesterséges intelligenciai megvalósításnak, mint képfeldolgozó rendszernek annak ellenére, hogy a megfogalmazott feladatkör valójában képfeldolgozási probléma.</p>
+<p>A karakterfelismerés egyre nagyobb teret hódít az informatikában, ezt az a tény is jelzi, hogy több nagy informatikai cég, pl. a Google és a Microsoft is nagymértékben támogatja az ezen a területen történő kutatásokat és fejlesztéseket.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="előző fejezet">Welcome to Dissertation’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Ez az Oldal</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/overview.rst.txt"
+            rel="nofollow">Forrás megtekintése</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ok" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Szilvasi Peter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/pages/overview.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
