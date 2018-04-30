@@ -1,0 +1,34 @@
+>    - 1.fejezet: Kicsit átírni/bővíteni az osztályozás fontosságára,
+>    megemlíteni az érintett problémakört.
+
+Igen. Itt ami lényeges, hogy osztályozással, feature extraction-nel kapcsolatban egy részletesebb áttekintést kellene majd csinálni.
+
+>    - 2.fejezet: Eleje lehet ugyanaz, az OCR-hez kiegészíteni más
+>    algoritmusokkal.
+
+Itt főként a feature extraction részben lehet különbség. Az ilyen módszerek esetében 3 nagyobb részlépés szokott lenni, úgy mint
+- zajszűrés képfeldolgozási módszerekkel,
+- jellemzők kinyerése,
+- az osztályozási probléma felírása és megoldása. Ennél a lépésnél már nem nagyon látszik, hogy egyáltalán karakterfelismerésről van szó, mert már csak (jellemzően valós értékeket tartalmazó) feature vektorok vannak.
+
+>    - 3.fejezet: Ide mehet csak az adathalmazok típusairól: nyomtatott,
+>    kézzel írott, generált, ezeket pár bekezdésbe részletezni.
+
+Igen, tanító, teszt és validációs adatbázis is jó ha minél nagyobb/több van.
+
+>    - 4.fejezet: Ennél akkor a neurális hálókat igazából ki lehet hagyni
+>    vagy csak tényleg megemlíteni. Konvolúciós neurális hálók részletezni, több
+>    kidolgozást bemutatni.
+
+A hálót olyan tekintetben lehet kihagyni, hogy az ANN-ek általános áttekintéséből tényleg elég csak említeni. Az osztályozás kapcsán viszont bele lehet menni a részletekbe.
+
+>    - 5.fejezet: a különböző osztályozásokat összehasonlítani. Eredmények a
+>    különböző CNN hálózatok szerint.
+
+Igen. Az eredmények kiemelése itt is nagyon fontos. Elsősorban erre szoktak kíváncsiak lenni, ez mutatja, hogy mennyire alkalmazható a módszer.
+
+>    - 6.fejezet: Általános összegzés. Jövőbeni kitekintés. Előnyök,
+>    hátrányok.
+
+Igen, ez így jó. :)
+
