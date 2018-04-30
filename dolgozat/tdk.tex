@@ -1,0 +1,110 @@
+\documentclass[a4paper,oneside]{book}
+
+% Egy hasznos Mac OS X-es videó:
+% http://www.youtube.com/watch?v=XFiLjB9UNaA&feature=related
+
+% Oyepa, Working Tagged Filesystem:
+% http://pages.stern.nyu.edu/~marriaga/software/oyepa/
+
+\usepackage{tdk}
+
+\usepackage{listings}
+\usepackage{tikz}
+
+\usepackage{rotating}
+
+
+\usepackage{color}
+\usepackage{soulutf8}
+% \definecolor{comment}{rgb}{0,0.6,0.2}
+
+\usepackage{CJKutf8}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{marginnote}
+\usepackage{listings}
+\graphicspath{ {../dolgozat/images/} }
+
+
+% Code colorature
+\definecolor{paszt}{RGB}{252,252,252}
+\definecolor{keret}{RGB}{220,220,220}
+\lstset{
+backgroundcolor=\color{paszt},
+% showlines=true,
+framexleftmargin=4mm,
+framexrightmargin=4mm,
+framextopmargin=2mm,
+framexbottommargin=2mm,
+frameround=tttt,
+frame=trbl,
+rulecolor=\color{keret},
+extendedchars=true,
+literate={á}{{\'a}}1 {é}{{\'e}}1 {ö}{{\"o}}1 {ő}{{\H{o}}}1 {ó}{{\'o}}1,
+%inputencoding=utf8
+}
+
+% Line spacing (1.5-ös sorköz)
+\linespread{1.2}
+
+% Set spacing in source code (normál sorköz -1.5)
+%\lstset{
+%lineskip={-3pt}
+%}
+
+\usepackage{pslatex}
+
+%%% Font settings
+% \usepackage{times}
+\usepackage{lmodern} % !!!
+% \usepackage{chancery}
+% \usepackage{charter}
+% \usepackage{palatino}
+% \usepackage{mathpazo}
+% \usepackage{mathpple} % !!!
+% \usepackage{mathptmx}
+
+\usepackage{pstricks}
+
+\usepackage{cpp}
+\usepackage{python}
+
+% Indicators
+\usepackage{indicators}
+
+\begin{document}
+
+% \pagestyle{empty} %a címlapon ne legyen semmi=empty, azaz nincs fejléc és lábléc
+
+% Címlap
+\include{cimlap}
+
+% Font size
+% \large
+
+% Tartalomjegyzék
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+% Set page style !!!
+\pagestyle{fancy}
+
+% Set number of page
+\setcounter{page}{1}
+
+% Chapters
+\include{chapters/1_bevezetes}
+\include{chapters/2_karakterfelismeres}
+\include{chapters/3_generalas}
+\include{chapters/4_neuralis_halok}
+\include{chapters/5_validacio}
+\include{chapters/6_osszegzes}
+
+% \include{bibliography} % 2
+
+\bibliographystyle{acm}
+\bibliography{tdk}
+
+\end{document}
