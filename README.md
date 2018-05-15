@@ -1,4 +1,4 @@
-# Karakterek felismerése alakjellemzők alapján
+# Kínai karakterek felismerése konvolúciós neurális hálók használatával
 
 _Szakdolgozat_
 
@@ -6,7 +6,7 @@ _Szakdolgozat_
 
 * Motiváció, a kiválasztott témakör népszerűsítése 1-2 oldalban.
 
-## Kínai karakterek felismerése konvolúciós neurális hálók használatával
+## Témakör bemutatása
 
 * A témakör aktualitásának, jelenlegi eredményeinek bemutatása
 * Karakter feldolgozás néhány dolog
