@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dolgozat.aux
+A level-1 auxiliary file: cimlap.aux
+A level-1 auxiliary file: chapters/1_bevezetes.aux
+A level-1 auxiliary file: chapters/2_karakterfelismeres.aux
+A level-1 auxiliary file: chapters/3_generalas.aux
+A level-1 auxiliary file: chapters/4_neuralis_halok.aux
+A level-1 auxiliary file: chapters/5_implementacio.aux
+A level-1 auxiliary file: chapters/6_validacio.aux
+A level-1 auxiliary file: chapters/7_osszegzes.aux
+The style file: acm.bst
+Database file #1: dolgozat.bib
+Repeated entry---line 48 of file dolgozat.bib
+ : @inproceedings{wu2002recognition
+ :                                 ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 125 of file dolgozat.bib
+ : 
+ : year = {2003}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in kinaiiras
+Warning--to sort, need author or key in tmwebdvi77
+Warning--there's a month but no year in kinaiiras
+Warning--empty journal in liconvolution
+You've used 15 entries,
+            2253 wiz_defined-function locations,
+            620 strings with 6842 characters,
+and the built_in function-call counts, 4771 in all, are:
+= -- 465
+> -- 188
+< -- 0
++ -- 83
+- -- 64
+* -- 331
+:= -- 733
+add.period$ -- 41
+call.type$ -- 15
+change.case$ -- 76
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 184
+empty$ -- 425
+format.name$ -- 64
+if$ -- 1026
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 11
+newline$ -- 74
+num.names$ -- 26
+pop$ -- 108
+preamble$ -- 1
+purify$ -- 62
+quote$ -- 0
+skip$ -- 133
+stack$ -- 0
+substring$ -- 301
+swap$ -- 53
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 4
+while$ -- 46
+width$ -- 17
+write$ -- 148
+(There were 2 error messages)
