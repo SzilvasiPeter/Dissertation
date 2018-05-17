@@ -8,15 +8,15 @@
 
 % TODO: \cite{liu2006high} https://hal.inria.fr/file/index/docid/120419/filename/liama4.pdf
 
-A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a funkciókivonás a mért adatok kezdeti sorozatából indul ki, és információs és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket, és egyes esetekben a jobb emberi értelmezést. A funkciókivonás\cite{features27:online} összefügg a dimenzionalitás csökkentésével.
+A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a funkciókivonás a mért adatok kezdeti sorozatából indul ki és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket és egyes esetekben a jobb emberi értelmezést. A funkciókivonás\cite{features27:online} összefügg a dimenzionalitás csökkentésével.
 
-Ha egy algoritmushoz tartozó bemeneti adat túl nagy ahhoz, hogy feldolgozni lehessen, és gyaníthatóan redundáns (pl. a képpontként ismétlődése a megjelenített képeken), akkor átalakítható egy csökkentett készletté (funkcióvektorként is nevezik). A kezdeti funkciók egy részhalmazának meghatározása a funkciókiválasztásnak nevezik. A kiválasztott funkciók várhatóan tartalmazzák a bemeneti adatok releváns adatait, így a kívánt feladat a teljes kezdeti adat helyett a csökkentett ábrázolás használatával végezhető el.
+Ha egy algoritmushoz tartozó bemeneti adat túl nagy ahhoz, hogy feldolgozni lehessen, mert gyaníthatóan redundáns (pl. a képpontként ismétlődése a megjelenített képeken), akkor átalakítható egy csökkentett készletté (funkcióvektorként is nevezik). A kezdeti funkciók egy részhalmazának meghatározása a funkciókiválasztásnak nevezik. A kiválasztott funkciók várhatóan tartalmazzák a bemeneti adatok releváns adatait, így a kívánt feladat a teljes kezdeti adat helyett a csökkentett ábrázolás használatával végezhető el.
 
 \section{Dimenzió redukció}
 \begin{itemize}
 \item PCA: A dimenziócsökkentés\cite{wang2003feature} fő lineáris technikája a főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben. A főkomponens-elemzés (PCA) az osztályozási problémák dimenzió csökkentési technikájaként használható. A dimenziócsökkentés fő lineáris technikája, főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben.
 
-A gyakorlatban az adatok kovariancia mátrixát állítják össze, és a mátrixban lévő sajátvektorokat kiszámítják. A legnagyobb sajátértékeknek megfelelő sajátvektorok a főkomponensek, amelyek felhasználhatók az eredeti adatok nagy részének rekonstruálására.
+A gyakorlatban az adatok kovariancia mátrixát állítják össze és a mátrixban lévő sajátvektorokat kiszámítják. A legnagyobb sajátértékeknek megfelelő sajátvektorok a főkomponensek, amelyek felhasználhatók az eredeti adatok nagy részének rekonstruálására.
 
 Ha létezik egy $A$ nevű négyzetes mátrix, egy skalár $\lambda$ és egy nem nulla vektor $v$, akkor $\lambda$ az sajátérték és a $v$ a sajátvektor, ha a következő egyenlet teljesül:
 
@@ -108,7 +108,7 @@ Kép fényerejének hirtelen változásainak okai lehetnek:
 \end{enumerate}
 \item Sarokérzékelés: A sarokérzékelés egy olyan megközelítés, amelyet a számítógépeslátásnál használnak bizonyos jellemzők kivonására és a kép tartalmának kivonására.
 A sarok két él metszéspontjaként definiálható. A sarok olyan pontként is definiálható, amelynél a pont egy helyi szomszédságában két domináns és különböző él irány található.
-Harris és Stephens sarokdetektáló algoritmus rendkivül gyors. A szürkeárnyalatos kétdimenziós képeknél alkalmazhatjuk. Adjuk meg ezt a képet $I$ segítségével. Vegyünk egy képpontot a $(u, v)$ területen, és mozgassuk azt $(x, y)$. A két pont közötti négyzetes különbség (SSD) súlyozott összege, $S$, az alábbiak szerint adható meg:
+Harris és Stephens sarokdetektáló algoritmus rendkivül gyors. A szürkeárnyalatos kétdimenziós képeknél alkalmazhatjuk. Adjuk meg ezt a képet $I$ segítségével. Vegyünk egy képpontot a $(u, v)$ területen és mozgassuk azt $(x, y)$. A két pont közötti négyzetes különbség (SSD) súlyozott összege, $S$, az alábbiak szerint adható meg:
 
 $$
 S(x,y)=\sum_{u}\sum_{v}w(u,v)(I(u+x,v+y)-I(u,v))^{2}
@@ -131,7 +131,7 @@ Egy sarkot az $(x, y)$ vektor minden irányának $S$ változata jellemez. Az $A$
 \item Ha $\lambda_1 \approx 0$ és $\lambda _{2}$ egy nagy pozítiv szám, akkor sarok található.
 \item Ha $\lambda_1$ és $\lambda_2$ nagy pozítiv szám, akkor sarok detektálható.
 \end{enumerate}
-\item Méret-invariáns jellemző transzformáció (SIFT): A transzformáció a számítógéplátásban használt algoritmus, amely helyi jellemzők felderítésére és leírására használják. A kulcspontokat az objektumokon először egy kép készletből vonják ki és tárolják egy adatbázisban. Egy objektumot felismernek egy új képen azáltal, hogy az egyes képeket az új képből az adatbázisba hasonlítjuk össze, és megtaláljuk a megfelelő jellemzőket, amelyek euklideszi távolságukon alapulnak. \Aref{fig:sift} ábrán látható egy példa.
+\item Méret-invariáns jellemző transzformáció (SIFT): A transzformáció a számítógéplátásban használt algoritmus, amely helyi jellemzők felderítésére és leírására használják. A kulcspontokat az objektumokon először egy kép készletből vonják ki és tárolják egy adatbázisban. Egy objektumot felismerünk egy új képen azáltal, hogy az egyes képeket az új képből az adatbázisba hasonlítjuk össze és megtaláljuk a megfelelő jellemzőket, amelyek euklideszi távolságukon alapulnak. \Aref{fig:sift} ábrán látható egy példa.
 \begin{figure}[h]
 \centering
 \captionsetup{justification=centering}
@@ -172,7 +172,7 @@ Ha egy gradiens irány két standard irány között fekszik, akkor a vektor ké
 
 \subsection{Elmosódás és mintavétel}
 
-Mindegyik irány síkot, amelynek méretével megegyezik a normalizált kép azt csökkenteni kell, hogy mérsékelt dimenziójú jellemző értékeket nyerjen. Egy egyszerű módja az, hogy az irány síkot több blokkzónába osztjuk, és az egyes zónák teljes vagy átlagos értékét jellemző értékként vesszük.
+Mindegyik irány síkot, amelynek méretével megegyezik a normalizált kép azt csökkenteni kell, hogy mérsékelt dimenziójú jellemző értékeket nyerjen. Egy egyszerű módja az, hogy az irány síkot több blokkzónába osztjuk és az egyes zónák teljes vagy átlagos értékét jellemző értékként vesszük.
 
 Az elmosódás végrehajtásakor a térbeli szűrő impulzus-válaszfüggvénye (IRF) egy súlyozott ablakhoz hasonlít, amelyet elmosódási maszknak is neveznek. Az IRF-t gyakran Gaussian függvényként veszik figyelembe:
 

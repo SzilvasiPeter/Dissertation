@@ -123,7 +123,7 @@ A szegmentáció során a karakterek közötti éles határ megtalálása a cél
 
 \subsection{Optikai előfeldolgozás}
 
-Az előfeldolgozás a bemeneti minta komplexitásának csökkentésére szolgál, és annak legjellemzőbb vonásait emeli ki. Különösen nagy jelentősége van a kézírás felismerésekor, ugyanis az írott betűk jóval komplexebb mintákat alkothatnak, mint a nyomtatott betűk. A jellemzők kiemelése során a komplexitás úgy csökken, hogy közben a legjellemzőbb információk megmaradnak és ezáltal a későbbi feldolgozás számításigényét redukálhatjuk. Ez a folyamat tulajdonképpen egy komplexitáscsökkentéssel járó digitalizáció. \Aref{fig:ocr_preprocess}. ábra egy egyszerű digitalizálási módszert mutat, amikor az analóg jelre egy mátrixot reprezentáló rácshálót illesztünk, és amelyik cellán átmegy az analóg karakter, az az elem a mátrixban 1 értéket vesz fel (fekete), egyéb esetben pedig 0-t (fehér). (Természetesen konvenciótól függően fordított eset is elképzelhető.)
+Az előfeldolgozás a bemeneti minta komplexitásának csökkentésére szolgál és annak legjellemzőbb vonásait emeli ki. Különösen nagy jelentősége van a kézírás felismerésekor, ugyanis az írott betűk jóval komplexebb mintákat alkothatnak, mint a nyomtatott betűk. A jellemzők kiemelése során a komplexitás úgy csökken, hogy közben a legjellemzőbb információk megmaradnak és ezáltal a későbbi feldolgozás számításigényét redukálhatjuk. Ez a folyamat tulajdonképpen egy komplexitáscsökkentéssel járó digitalizáció. \Aref{fig:ocr_preprocess}. ábra egy egyszerű digitalizálási módszert mutat, amikor az analóg jelre egy mátrixot reprezentáló rácshálót illesztünk és amelyik cellán átmegy az analóg karakter, az az elem a mátrixban 1 értéket vesz fel (fekete), egyéb esetben pedig 0-t (fehér). (Természetesen konvenciótól függően fordított eset is elképzelhető.)
 
 \begin{figure}[h]
 \centering
@@ -207,7 +207,7 @@ Mikor a felismerési rendszer kimenetet generál, lehetséges, hogy néhány kar
 
 Egy olyan algoritmust mutatok be, ami képes kínai karakterek felismerésére sok különböző betűtípussal (pl. Song, Fang, Kai, Hei, Yuan, Lishu, Weibei és Xingkai) \cite{wu2002recognition}. Ezekre a betűtípusokra \aref{fig:chinese_fonts}. ábrán láthatunk néhány példát.
 
-Az algoritmus származtatott jellemzőkön alapul, és egy szótár halmazt használ. Először egy 3 szintes illesztést végez mindegyik szótárhoz képest. Az ilyen illesztésekhez kapcsolódó távolsági méréseket ezután egy központi diszkriminátorba táplálják, hogy a végső felismerési eredményt kiadják. Gyors és a pontos felismerést ért el mind a címben az összes 8 betűtípust és mind a főoldalon, amelyhez az első 4 általánosan használt betűtípus tartozik.
+Az algoritmus származtatott jellemzőkön alapul és egy szótár halmazt használ. Először egy 3 szintes illesztést végez mindegyik szótárhoz képest. Az ilyen illesztésekhez kapcsolódó távolsági méréseket ezután egy központi diszkriminátorba táplálják, hogy a végső felismerési eredményt kiadják. Gyors és a pontos felismerést ért el mind a címben az összes 8 betűtípust és mind a főoldalon, amelyhez az első 4 általánosan használt betűtípus tartozik.
 
 \begin{figure}[h]
 \centering
@@ -233,7 +233,7 @@ ahol $i = 1, \ldots, 8$, és $l_i$ a csatlakoztatott fekete képpontok száma $i
 \label{fig:8direction}
 \end{figure}
 
-Az OCR rendszereknél, a felismerési algoritmusok két szakaszból állnak: tanítás és tesztelés. A hálózat súlyait a képzés során határozzák meg. A képzés után a rendszer átkapcsol a tesztelési fázisra, és a szótárak szerint meghatározza a legvalószínűbb karakterindexet.
+Az OCR rendszereknél, a felismerési algoritmusok két szakaszból állnak: tanítás és tesztelés. A hálózat súlyait a képzés során határozzák meg. A képzés után a rendszer átkapcsol a tesztelési fázisra és a szótárak szerint meghatározza a legvalószínűbb karakterindexet.
 
 A hierarchikus illeszkedés három szintből áll. Az első szint egy osztályozó, ami felhasználja a transzformált jellemzőket. Ezután a jellemzőket egy második szintű osztályozónak adják át. Az osztályozó több elemet is kiemel (kisebb számú kimenet). A harmadik szint az összes elemet használni fogja, a karaktert a végső felismerés eredményeként kiválasztja.
 

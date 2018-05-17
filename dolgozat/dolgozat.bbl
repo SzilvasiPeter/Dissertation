@@ -57,6 +57,13 @@ tmweb.dvi.
 \newblock Convolution neural network for traditional chinese calligraphy
   recognition.
 
+\bibitem{liu2008handwritten}
+{\sc Liu, C.-L.}
+\newblock Handwritten chinese character recognition: effects of shape
+  normalization and feature extraction.
+\newblock In {\em Arabic and Chinese handwriting recognition}. Springer, 2008,
+  pp.~104--128.
+
 \bibitem{liu2013online}
 {\sc Liu, C.-L., Yin, F., Wang, D.-H., and Wang, Q.-F.}
 \newblock Online and offline handwritten chinese character recognition:

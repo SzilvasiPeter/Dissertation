@@ -53,63 +53,11 @@ seq = iaa.Sequential([
 
 A \texttt{imgaug} dokumentációjában részletesen ismertetésre kerülnek az argumentumok (Flipud, Affine, SimplexNoiseAlpha, Dropout, Grayscale, Scale).
 
-\section{A neurális háló tanítása}
-
-\subsection{Mintaadatok beolvasása}
+\section{Mintaadatok beolvasása}
 
 A tanítás elött be kell olvasni a kínai karaktereinket. Mind a tanító mind a tesztelő adathalmaznak ki kell nyerni a címkéjét, ami meghatároza, hogy a kép milyen karakter.
 
 A különböző zajokkal ellátott képeket külön-külön be lehet tanítani a hálózattal. Ebben az esetben szét kell választani a képeket zajok szerint, majd azokat betanítani.
-
-\subsection{Tanítás}
-
-A kép jellemzők kiválasztásához a 4. fejezetben említett konvolúciós hálózatot használom. A CNN a jelenlegi legjobb modellek az objektumok felismerésére, a pontossága 94+\%.
-
-\Aref{fig:arch}. ábra a hálózat architektúrát szemlélteti:
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.45]{images/architecture}
-	\caption{Architektúra}
-	\label{fig:arch}
-\end{figure}
-
-Ez az alábbi részekből épül fel.
-\begin{itemize}
-\item Öt konvolúciós (convolution) réteg. Az első réteg megkapja a képet. A kép $64 \times 64$ pixel méretű és 1 szín csatorna (gray-scaled) van. A rétegeken $3 \times 3$ szűröt (kernel) használok 1-es lépéssel (stride).
-\begin{python}
-model.add(Convolution2D(1,	# filter rétegek száma    
-                        3, 3,	# 3x3 kernel méret 
-                        strides=(1,1) # lépés
-                        input_shape=image))
-\end{python}
-\item Négy összevonó (pooling) réteg. Bemenetei a konvolúciós rétegek kimenetei. A rétegen maximális összevonás (max-pooling) van.
-\begin{python}
-model.add(MaxPooling2D(pool_size=(2,2)))
-\end{python}
-\item Két teljesen összekötött (fully-connected) réteg. Az aktivációs függvény: RELU, a dropout: 0.2, neuronok száma: 1024, 3755.
-\begin{python}
-model.add(Flatten()) # Bemenet
-model.add(Dense(1024, activation='RELU'))
-model.add(Dropout(0.2))
-model.add(Dense(3755, activation='None'))
-\end{python}
-\end{itemize}
-
-A tanítás a 4. fejezetben említett hiba visszaterjesztéssel (backpropagation) történik. A célunk az hogy a hibát megprobáljuk a minimumra csökkenteni, amit a hálózat súlyainak változtatásával érünk el.
-
-\begin{python}
-# Negyzetes hiba
-model.compile(loss='mean_squared_error',
-              optimizer='adam',
-              metrics=['accuracy'])
-
-# Halozat tanitas
-model.fit_generator(generator=training_data,
-                    steps_per_epoch=1000, epochs=10)
-\end{python}
-
-A tanítás ideje körülbelül 17 órát vett igénybe. A hardver: CPU - 4 mag 2.8Ghz, RAM - 4Gb. Tanítás 3200 epoch-ból állt, a tanítóhalmaz mérete 300 Mb.
 
 \newpage
 
