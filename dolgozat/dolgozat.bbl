@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{features27:online}
+features extraction - google-searching.
+\newblock
+  \url{https://www.google.hu/search?q=features+extraction&biw=1301&bih=653&source=lnms&sa=X&ved=0ahUKEwia8NmVtYrbAhUIiSwKHaw1AowQ_AUICSgA}.
+
 \bibitem{kinaiiras}
 Kínai írás – wikipédia.
 \newblock \url{https://hu.wikipedia.org/wiki/K%C3%ADnai_%C3%ADr%C3%A1s}, 2.
@@ -62,6 +67,12 @@ tmweb.dvi.
 {\sc Rövid, A., Vámossy, Z., and Sergyán, S.}
 \newblock A gépi látás és képfeldolgozás párhuzamos modelljei és
   algoritmusai, 2014.
+
+\bibitem{wang2003feature}
+{\sc Wang, X., and Paliwal, K.~K.}
+\newblock Feature extraction and dimensionality reduction algorithms and their
+  applications in vowel recognition.
+\newblock {\em Pattern recognition 36}, 10 (2003), 2429--2439.
 
 \bibitem{wu2002recognition}
 {\sc Wu, X., and Wu, M.}

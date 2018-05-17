@@ -8,13 +8,13 @@
 
 % TODO: \cite{liu2006high} https://hal.inria.fr/file/index/docid/120419/filename/liama4.pdf
 
-A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a funkciókivonás a mért adatok kezdeti sorozatából indul ki, és információs és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket, és egyes esetekben a jobb emberi értelmezést. A funkciókivonás összefügg a dimenzionalitás csökkentésével.
+A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a funkciókivonás a mért adatok kezdeti sorozatából indul ki, és információs és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket, és egyes esetekben a jobb emberi értelmezést. A funkciókivonás\cite{features27:online} összefügg a dimenzionalitás csökkentésével.
 
 Ha egy algoritmushoz tartozó bemeneti adat túl nagy ahhoz, hogy feldolgozni lehessen, és gyaníthatóan redundáns (pl. a képpontként ismétlődése a megjelenített képeken), akkor átalakítható egy csökkentett készletté (funkcióvektorként is nevezik). A kezdeti funkciók egy részhalmazának meghatározása a funkciókiválasztásnak nevezik. A kiválasztott funkciók várhatóan tartalmazzák a bemeneti adatok releváns adatait, így a kívánt feladat a teljes kezdeti adat helyett a csökkentett ábrázolás használatával végezhető el.
 
 \section{Dimenzió redukció}
 \begin{itemize}
-\item PCA: A dimenziócsökkentés fő lineáris technikája a főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben. A főkomponens-elemzés (PCA) az osztályozási problémák dimenzió csökkentési technikájaként használható. A dimenziócsökkentés fő lineáris technikája, főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben.
+\item PCA: A dimenziócsökkentés\cite{wang2003feature} fő lineáris technikája a főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben. A főkomponens-elemzés (PCA) az osztályozási problémák dimenzió csökkentési technikájaként használható. A dimenziócsökkentés fő lineáris technikája, főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben.
 
 A gyakorlatban az adatok kovariancia mátrixát állítják össze, és a mátrixban lévő sajátvektorokat kiszámítják. A legnagyobb sajátértékeknek megfelelő sajátvektorok a főkomponensek, amelyek felhasználhatók az eredeti adatok nagy részének rekonstruálására.
 
@@ -48,7 +48,7 @@ $$
 
 Lehetőségünk van különböző kernelek definiálására, felsorolok néhány példát: \textit{Gauss kernel:} $e^{{\frac  {-||{\boldsymbol  {x}}-{\boldsymbol  {y}}||^{2}}{2\sigma ^{2}}}}$ \textit{, Tangens kernel:} $tanh(({\bf x}\cdot {\bf y})+\theta)$ \textit{, Polinom kernel:} $({\bf x}\cdot {\bf y})^k$
 
-\item LDA: A lineáris diszkriminancia-analízis (LDA) a Fisher lineáris diszkriminánsának, a statisztikában, a minta felismerésében és a gépi tanulásban használt módszer, amely olyan objektumok lineáris kombinációját találja, amely két vagy több objektum- vagy eseményosztályt jellemez vagy elválaszt.
+\item LDA\cite{wang2003feature}: A lineáris diszkriminancia-analízis (LDA) a Fisher lineáris diszkriminánsának, a statisztikában, a minta felismerésében és a gépi tanulásban használt módszer, amely olyan objektumok lineáris kombinációját találja, amely két vagy több objektum- vagy eseményosztályt jellemez vagy elválaszt.
 \item Autoencoder: Az "autoencoding" egy olyan adattömörítési algoritmus, ahol a tömörítési és dekompressziós függvények:
 \begin{enumerate}
 \item adat-specifikusak: Az autoencoderek adatspecifikusak, ami azt jelenti, hogy csak azokat az adatokat tudják tömöríteni, amelyekkel betanították.
@@ -96,6 +96,7 @@ A neurális hálózat szerkezete \aref{fig:deep_autoencoder} ábrán látható:
 A neurális hálózatunk szimmetrikus. A középső rejtett rétegen az adatunk tömörített változatát találhatjuk. Számunkra nem a kimenet az érdekes, hiszen az csak egy másolata a bementi rétegnek. A rejtett rétegek súlyai fontosak számunkra. Az előállított súlyokkal képesek vagyunk az adatok dimenzió csökkentésére. A kép egy tömörített változata elősegíti a gyorsabb feldolgozást.
 
 \section{Alacsony szintű jellemzők}
+Az alacsony szintű jellemző\cite{features27:online}, amelyek a kép tartalmát leíró technikák, egy teljes kép szintjén, nem pedig annak különböző területein. Az egyik legfontosabb folyamat, amellyel találkozunk, az úgynevezett éldetektálás.
 \begin{itemize}
 \item Éldetektálás: Az éldetektálás számos matematikai módszert foglal magában, amelyek olyan pontok azonosítását célozzák meg egy digitális képen, amelyeknél a kép fényereje élesen megváltozik vagy formálisan megszakad. Azok a pontok, amelyeknél a kép fényereje élesen változik, tipikusan íves szegmensek csoportjába sorolják.
 Kép fényerejének hirtelen változásainak okai lehetnek:
@@ -150,7 +151,7 @@ Figyelembe véve, hogy a kínai karakterek stroke részei megközelíthetők tö
 \label{fig:direction8}
 \end{figure}
 
-Az irány funkciók kinyerése három lépésben valósul meg: kép normalizálása, irány dekompozíció és jellemző mintavételezés. 
+Az irány funkciók kinyerése\cite{liu2008handwritten} három lépésben valósul meg: kép normalizálása, irány dekompozíció és jellemző mintavételezés. 
 
 A normalizálás szabályozza a karakterek kép méretét, pozícióját és alakját, hogy csökkentse az azonos osztályú képek közötti változatokat.
 
@@ -203,4 +204,4 @@ grd-g                  & 0.329     & 1.276    \\ \hline
 \subsection{Korlátozás nélküli minták}
 A korlátozás nélküli kézzel készített mintákkal rendelkező képzési osztályozók képesek lesznek javítani a korlátozás nélküli karakterfelismerés pontosságát. A korlátozás nélküli karakterek nagy adatbázisának gyűjtése sürgős feladat lesz a közeljövőben.
 
-Ha a hibaarányt meglehetősen alacsony szintre szeretné csökkenteni (például 2\% -ot az elszigetelt karakterek esetében), egyszerűen csak az aktuális normalizációs és funkciókivonási módszerek használata nem elegendőek. A normalizálás, a funkciókivonás és az osztályozó kialakításának módszereit újra kell gondolni a írásjelek jobb felismerésére. A képzési osztályozók diszkriminatív módon javíthatják a kézírásos és a korlátlan karakterfelismerés pontosságát.
+Ha a hibaarányt meglehetősen alacsony szintre szeretné csökkenteni (például 2\% -ot az elszigetelt karakterek esetében), egyszerűen csak az aktuális normalizációs és funkciókivonási módszerek használata nem elegendőek. A normalizálás, a funkciókivonás és az osztályozó kialakításának módszereit újra kell gondolni a írásjelek jobb felismerésére. A képzési osztályozók diszkriminatív módon javíthatják a kézírásos és a korlátozás nélküli karakterfelismerés pontosságát.

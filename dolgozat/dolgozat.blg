@@ -20,49 +20,50 @@ I was expecting a `,' or a `}'---line 125 of file dolgozat.bib
  : year = {2003}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in features27:online
 Warning--to sort, need author or key in kinaiiras
 Warning--to sort, need author or key in tmwebdvi77
 Warning--there's a month but no year in kinaiiras
 Warning--empty journal in liconvolution
-You've used 15 entries,
+You've used 17 entries,
             2253 wiz_defined-function locations,
-            620 strings with 6842 characters,
-and the built_in function-call counts, 4771 in all, are:
-= -- 465
-> -- 188
+            630 strings with 7221 characters,
+and the built_in function-call counts, 5272 in all, are:
+= -- 516
+> -- 201
 < -- 0
-+ -- 83
-- -- 64
-* -- 331
-:= -- 733
-add.period$ -- 41
-call.type$ -- 15
-change.case$ -- 76
++ -- 89
+- -- 68
+* -- 367
+:= -- 804
+add.period$ -- 46
+call.type$ -- 17
+change.case$ -- 84
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 184
-empty$ -- 425
-format.name$ -- 64
-if$ -- 1026
+cite$ -- 22
+duplicate$ -- 200
+empty$ -- 477
+format.name$ -- 68
+if$ -- 1136
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 11
-newline$ -- 74
-num.names$ -- 26
-pop$ -- 108
+int.to.str$ -- 17
+missing$ -- 12
+newline$ -- 83
+num.names$ -- 28
+pop$ -- 119
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 68
 quote$ -- 0
-skip$ -- 133
+skip$ -- 146
 stack$ -- 0
-substring$ -- 301
-swap$ -- 53
+substring$ -- 342
+swap$ -- 56
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
-warning$ -- 4
-while$ -- 46
-width$ -- 17
-write$ -- 148
+type$ -- 66
+warning$ -- 5
+while$ -- 50
+width$ -- 19
+write$ -- 165
 (There were 2 error messages)
