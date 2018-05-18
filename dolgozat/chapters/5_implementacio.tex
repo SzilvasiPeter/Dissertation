@@ -173,15 +173,60 @@ A fenti kódban a "steps\_ per\_ epoch" tartalmazza a tanító képek számát, 
 
 Az "epochs": Egyetlen epoch egyetlen lépés egy neurális hálózat képzésében; más szóval ha egy neurális hálózatot képzett minden képzési mintán csak egy lépésben, azt mondjuk, hogy egy epoch befejezõdött. Tehát a képzési folyamatnak több korszakot kell tartalmaznia. Ebben az esetben 25 korszakot definiáltunk.
 
+\newpage
+
 \section{Hálózat architektúrája}
 
 \Aref{fig:cnn_arch} ábrán látható a hálózat architektúrája.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{images/cnn_architecture}
+\includegraphics[scale=0.45]{images/cnn_architecture}
 \caption{Architektúra}
 \label{fig:cnn_arch}
 \end{figure}
 
+Az első konvolúciós réteg a nyers képet bevitelként veszi fel, majd a különböző dimenzió mentén működő neuronok aktiválódhatnak különböző orientált élek vagy színes foltok jelenlétében.
 
+A pooling réteg a kép térbeli méretének fokozatos csökkentésére, a paraméterek számának és a számítás számának csökkentésére szolgál a hálózatban. Továbbá kontrollálja a túltanítás jelenséget.
+
+Fontos megjegyezni, hogy a szűrők az eredeti bemeneti kép jellemződetektoraként működnek.
+
+A szűrőmátrix (filter) különböző értékei ugyanazon bemeneti képhez különböző jellemző-térképeket eredményeznek. Példaként vegye figyelembe néhány szűröt, amely képes felismerni a különböző jellemzőket:
+\begin{itemize}
+\item Él detektálás: 
+$
+\begin{bmatrix}
+\ \ 1 & 0 & -1 \\
+\ \ 0 & 0 & \ \ 0 \\
+-1 & 0 & \ \ 1
+\end{bmatrix}
+$
+$
+\begin{bmatrix}
+0 &  \ \ 1 & 0 \\
+1 & -4 & 1 \\
+0 &  \ \ 1 & 0
+\end{bmatrix}
+$
+$
+\begin{bmatrix}
+-1 &  -1 & -1 \\
+-1 & \ \ 8 & -1 \\
+-1 &  -1 & -1
+\end{bmatrix}
+$
+\item Élesség: $\begin{bmatrix}
+\ \ 0 & -1 & \ \ 0 \\
+-1 & \ \ 5 & -1 \\
+\ \ 0 & -1 & \ \ 0
+\end{bmatrix}$
+\item Elmosodás (Gaussian blur): $\frac{1}{16}
+\begin{bmatrix}
+1 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 1
+\end{bmatrix}$
+\end{itemize}
+
+Az előterjesztésbe (forward pass) a pixelek értékei áthaladnak a konvolúciós rétegeken, amelyek kiszámítják a mátrixok (szűrő és pixel mátrix) szorzatát. A manipulált pixel értékeket a hálózat továbbadja a következő rétegnek és a különböző jellemző térképét. Ennek eredményeképpen a hálózat megtanulja a szűrőket, amelyek akkor aktiválódnak, amikor valamilyen konkrét típusú jellemzőt észlelnek bizonyos térbeli pozícióban a bemenetben.
