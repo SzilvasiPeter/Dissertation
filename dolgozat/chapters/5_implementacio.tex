@@ -6,7 +6,7 @@
 
 % TODO: Részletesen, osztálydiagrammal bemutatni a konvolúciós hálós osztályozáshoz készített program szerkezetét.
 
-Ebben a fejezetbe egy képminősítési problémát szeretnél megoldni, ahol a célunk az lesz, hogy megállapítsuk, melyik osztályba tartozik a bemeneti kép. Ahhoz, hogy ezt megvalósítsuk, szükségünk van sok (minnél különböző annál jobb) bemeneti képekre a tanítás során. A konvolúciós neurális hálózat (CNN) képzésével és a neurális hálózat (NN) megtanulásával meg lehet jósolni, hogy melyik osztályba tartozik a kép.
+Ebben a fejezetbe egy képminősítési problémát szeretnék megoldni, ahol a célunk az lesz, hogy megállapítsuk, melyik osztályba tartozik a bemeneti kép. Ahhoz, hogy ezt megvalósítsuk, szükségünk van sok (minnél különböző annál jobb) bemeneti képekre a tanítás során. A konvolúciós neurális hálózat (CNN) képzésével és a neurális hálózat (NN) megtanulásával meg lehet jósolni, hogy melyik osztályba tartozik a kép.
 
 A legfontosabb dolog, hogy megértsük, hogy a ezek a modellek bármilyen típusú osztályra kiképezhetjük, ha egy osztályba tartozó bemeneti képekre tanítjuk be a hálózatunkat, akkor tesztelésnél pontosan felismeri ezeket az osztályokat, viszont kevésbbé ismeri fel a más osztályba tartozó képeket. Figyelembe kell venni a bemeneti képeket, hiszen általuk tanul a hálózat.
 
@@ -17,9 +17,11 @@ Az implementálás részhez a Keras deep learing könyvtárat használtam a pyth
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{images/keras}
+\caption{A \textit{Keras} szoftvercsomag logója}
+\label{fig:k}
 \end{figure}
 
-A Keras egy magas szintű neurális hálózat API, Python-ban írva, ami a TensorFlow, CNTK és a Theano felett fut. A Keras a gyors kísérletezésre összpontosít. A kód általában rövid, letisztult és jól szervezett.
+A Keras egy magas szintű neurális hálózat API, Python-ban írva, ami a TensorFlow, CNTK és a Theano felett fut. (\Aref{fig:k}. ábrán látható a logója.) A Keras a gyors kísérletezésre összpontosít. A kód általában rövid, letisztult és jól szervezett.
 
 A Keras deep learning könyvtár a továbbiakra érdemes használni:
 
@@ -34,7 +36,7 @@ A Keras deep learning könyvtár a továbbiakra érdemes használni:
 
 Mielőtt belevágnánk a modell kiépítésébe, szükségünk van tanító és teszt adatkészletre. Az kínai karakter adatbázisokat 2 csoportra oszthatjuk: online vagy offline. \Aref{fig:offline_online} ábrán látható pár példa.
 \begin{itemize}
-\item Online: Az online adatgyűjtés egy speciális digitális tollal (Anoto) történik. Lehetséges nyomtatott sablonok vagy szabadkézes írás. Az írás során az online adatok (stroke pályagörbéje: (x, y) koordináták szekvenciái) kerülnek rögzítésre az Anoto tollal, majd ezeket később a számítógépekre továbbítják.
+\item Online: Az online adatgyűjtés egy speciális digitális tollal (Anoto) történik. Lehetséges nyomtatott sablonok vagy szabadkezes írás. Az írás során az online adatok (stroke pályagörbéje: (x, y) koordináták szekvenciái) kerülnek rögzítésre az Anoto tollal, majd ezeket később a számítógépekre továbbítják.
 \item Offline: Az offline adatgyűjtés érdekében a kézzel írt oldalakat szkennelnek be (300 dpi felbontásban), hogy színes képeket kapjanak. Az annotációs eszközök segítségével a képeket szegmentálni és címkézni kell. Az annotáció után az adatbázisok hátterének 255 a pixel értéke előtéri képpontok értéke 0-254 közötti (szürke árnyalatos). Tehát bináris képeket úgy kaphatunk, ha egyszerűen megváltoztatjuk az előtér pixelét 1-re és a háttér-pixeleket 0-ra.
 \end{itemize}
 
@@ -51,11 +53,11 @@ Mielőtt belevágnánk a modell kiépítésébe, szükségünk van tanító és 
 
 \subsection{CASIA} 
 
-Az adatbázisok hat online és hat offline adathalmazból. Mindegyik adatbázis esetében három elszigetelt karakterkészlet és három kézzel írt szöveg tartozik. Mind az online, mind az offline esetekben az elszigetelt karakterek adatkészletei körülbelül 3,9 millió 7,356 osztályból (7,185 kínai karakter és 171 szimbólum) tartalmaznak, a kézzel írt szövegek pedig mintegy 5,090 oldalas és 1,35 millió karakteres mintát tartalmaznak. Az összes adatot szegmentálták és annotálták a karakterek szintjén és minden adatkészletet szabványos képzési és tesztalkalmazásokra osztottak fel.
+A CASIA adatbázisok hat online és hat offline adathalmazból. Mindegyik adatbázis esetében három elszigetelt karakterkészlet és három kézzel írt szöveg tartozik. Mind az online, mind az offline esetekben az elszigetelt karakterek adatkészletei körülbelül 3,9 millió 7,356 osztályból (7,185 kínai karakter és 171 szimbólum) tartalmaznak, a kézzel írt szövegek pedig mintegy 5,090 oldalas és 1,35 millió karakteres mintát tartalmaznak. Az összes adatot szegmentálták és annotálták a karakterek szintjén és minden adatkészletet szabványos képzési és tesztalkalmazásokra osztottak fel.
 
 \subsection{HITMWDB}
 
-Összehasonlítva a korábbi kéziratos adatbázisokkal, ebben az adatbázisban legalább három különbség van. Először is, a kézírás természetes módon íródott és nincsenek vonalzók, amelyek segítségével a szöveget egyenes vonalban lehet létrehozni. Másodszor, a kézi másolás alapjául szolgáló szövegeket szisztematikus módon mintavételezik és az írókat gondosan választják ki. Harmadszor, az adatok levél vagy közvetítő által lett összegyűjtve, ami valódi kézírási jelenségeket eredményez, például a rosszírás és a javítás.\\
+A HITMWDB adabázist összehasonlítva a korábbi kéziratos adatbázisokkal, ebben az adatbázisban legalább három különbség van. Először is, a kézírás természetes módon íródott és nincsenek vonalzók, amelyek segítségével a szöveget egyenes vonalban lehet létrehozni. Másodszor, a kézi másolás alapjául szolgáló szövegeket szisztematikus módon mintavételezik és az írókat gondosan választják ki. Harmadszor, az adatok levél vagy közvetítő által lett összegyűjtve, ami valódi kézírási jelenségeket eredményez, például a rosszírás és a javítás.\\
 
 A tanító és a teszt adatbázis aránya általában 8:2 (tanító:tesztelő). Az arány megfelelő kiválasztása fontos. Két egymással versengő probléma van: kevesebb képzési adatokkal, a paraméterbecslések nagyobb eltérést mutatnak. Kevesebb tesztelési adat mellett a teljesítménystatisztikája nagyobb lesz. Elmondható, hogy olyan megosztására kell törekedni, ahol a variancia nem túl magas.
 
@@ -164,7 +166,7 @@ A hálózat betanítását a következő módon történik:
 \begin{python}
 classifier.fit_generator(training_set,
 steps_per_epoch = 40000,
-epochs = 25,
+epochs = 3200,
 validation_data = test_set,
 validation_steps = 10000)
 \end{python}

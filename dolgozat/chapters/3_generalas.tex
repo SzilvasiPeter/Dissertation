@@ -8,13 +8,13 @@
 
 % TODO: \cite{liu2006high} https://hal.inria.fr/file/index/docid/120419/filename/liama4.pdf
 
-A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a funkciókivonás a mért adatok kezdeti sorozatából indul ki és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket és egyes esetekben a jobb emberi értelmezést. A funkciókivonás\cite{features27:online} összefügg a dimenzionalitás csökkentésével.
+A gépi tanulásban, a minta felismerésében és a képfeldolgozásban a jellemző kinyerés a mért adatok kezdeti sorozatából indul ki és nem redundáns szándékú származtatott értékeket (jellemzőket) hoz létre. A jellemzők elősegítik a későbbi tanulási és általánosítási lépéseket és egyes esetekben a jobb emberi értelmezést. A jellemző kinyerés\cite{features27:online} összefügg a dimenzionalitás csökkentésével.
 
 Ha egy algoritmushoz tartozó bemeneti adat túl nagy ahhoz, hogy feldolgozni lehessen, mert gyaníthatóan redundáns (pl. a képpontként ismétlődése a megjelenített képeken), akkor átalakítható egy csökkentett készletté (funkcióvektorként is nevezik). A kezdeti funkciók egy részhalmazának meghatározása a funkciókiválasztásnak nevezik. A kiválasztott funkciók várhatóan tartalmazzák a bemeneti adatok releváns adatait, így a kívánt feladat a teljes kezdeti adat helyett a csökkentett ábrázolás használatával végezhető el.
 
 \section{Dimenzió redukció}
 \begin{itemize}
-\item PCA: A dimenziócsökkentés\cite{wang2003feature} fő lineáris technikája a főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben. A főkomponens-elemzés (PCA) az osztályozási problémák dimenzió csökkentési technikájaként használható. A dimenziócsökkentés fő lineáris technikája, főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben.
+\item PCA: A dimenziócsökkentés\cite{wang2003feature} fő lineáris technikája a főkomponens elemzés, az adatok lineáris leképezését végzi egy alsó dimenziós térben. A főkomponens-elemzés (PCA) az osztályozási problémák dimenzió csökkentési technikájaként használható. A dimenziócsökkentés fő lineáris technikája a főkomponens elemzés.
 
 A gyakorlatban az adatok kovariancia mátrixát állítják össze és a mátrixban lévő sajátvektorokat kiszámítják. A legnagyobb sajátértékeknek megfelelő sajátvektorok a főkomponensek, amelyek felhasználhatók az eredeti adatok nagy részének rekonstruálására.
 
@@ -61,7 +61,6 @@ Ma az autoencoderek két érdekes gyakorlati alkalmazása az adatok zajszűrése
 
 Az autoencoder implementálása a \textit{keras} könyvtár, a  \textit{layers} és \textit{models} modulok használatával:
 \begin{python}
-
 input_img = Input(shape=(784,)) # A bemeneti adat
 encoded = Dense(32, activation='relu')(input_img) # kodolt adat
 decoded = Dense(784, activation='sigmoid')(encoded) # dekodolt adat
@@ -96,9 +95,9 @@ A neurális hálózat szerkezete \aref{fig:deep_autoencoder} ábrán látható:
 A neurális hálózatunk szimmetrikus. A középső rejtett rétegen az adatunk tömörített változatát találhatjuk. Számunkra nem a kimenet az érdekes, hiszen az csak egy másolata a bementi rétegnek. A rejtett rétegek súlyai fontosak számunkra. Az előállított súlyokkal képesek vagyunk az adatok dimenzió csökkentésére. A kép egy tömörített változata elősegíti a gyorsabb feldolgozást.
 
 \section{Alacsony szintű jellemzők}
-Az alacsony szintű jellemző\cite{features27:online}, amelyek a kép tartalmát leíró technikák, egy teljes kép szintjén, nem pedig annak különböző területein. Az egyik legfontosabb folyamat, amellyel találkozunk, az úgynevezett éldetektálás.
+Az alacsony szintű jellemző\cite{features27:online}, amelyek a kép tartalmát leíró technikák egy teljes kép szintjén, nem pedig annak különböző területein. Az egyik legfontosabb folyamat, amellyel találkozunk az úgynevezett éldetektálás.
 \begin{itemize}
-\item Éldetektálás: Az éldetektálás számos matematikai módszert foglal magában, amelyek olyan pontok azonosítását célozzák meg egy digitális képen, amelyeknél a kép fényereje élesen megváltozik vagy formálisan megszakad. Azok a pontok, amelyeknél a kép fényereje élesen változik, tipikusan íves szegmensek csoportjába sorolják.
+\item Éldetektálás: Az éldetektálás számos matematikai módszert foglal magában, amelyek olyan pontok azonosítását célozzák meg egy digitális képen, amelyeknél a kép fényereje élesen megváltozik vagy formálisan megszakad. Azok a pontok, amelyeknél a kép fényereje élesen változik tipikusan íves szegmensek csoportjába sorolják.
 Kép fényerejének hirtelen változásainak okai lehetnek:
 \begin{enumerate}
 \item Hirtelen mélységi változás
@@ -135,8 +134,8 @@ Egy sarkot az $(x, y)$ vektor minden irányának $S$ változata jellemez. Az $A$
 \begin{figure}[h]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=1.0]{images/sift}
-\caption{A jellemzők felderítése elforgatott képen \hspace{\textwidth}Forrás:\url{http://www.ismailsirma.com/visualsfm-3d-construction-of-images}}
+\includegraphics[scale=0.65]{images/sift1}
+\caption{A jellemzők felderítése elforgatott képen \hspace{\textwidth}Forrás:\cite{Jin2009SSIFTAI}}
 \label{fig:sift}
 \end{figure}
 \end{itemize}
@@ -157,7 +156,7 @@ A normalizálás szabályozza a karakterek kép méretét, pozícióját és ala
 
 \subsection{Irány dekompozíció}
 
-Az irány dekompozíció több iránysíkot eredményez, $f_i(x, y), i = 1,. . . , N_d$. Először leírjuk a gradiens dekompozícióra szolgáló eljárásokat 8 irányban, majd kiterjeszük 12 és 16 irányba.
+Az irány dekompozíció\cite{liu2008handwritten} több iránysíkot eredményez, $f_i(x, y), i = 1,. . . , N_d$. Először leírjuk a gradiens dekompozícióra szolgáló eljárásokat 8 irányban, majd kiterjeszük 12 és 16 irányba.
 
 A gradiens irányú jellemző kinyerés a gradiensvektor, amelyet a normalizált képen számolunk ki a Sobel operátorral, ami 8 irányra bontja a komponenseket. A Sobel operátornak két maszkja van, hogy kiszámítsa a gradiens komponensek a két tengelyen. A maszkok \aref{fig:sobel_operator} ábrán látható.
 
@@ -190,8 +189,7 @@ A jellemző kinyerés CPU időtartama szinte független a normalizációs módsz
 
 \begin{table}[h]
 \centering
-\caption{CPU idők}
-\label{cpu_times}
+\captionsetup{justification=centering}
 \begin{tabular}{|l|l|r|}
 \hline
 \multicolumn{1}{|c|}{} & direction & blurring \\ \hline
@@ -199,9 +197,11 @@ chn                    & 0.121     & 0.439    \\ \hline
 nccf                   & 0.458     & 0.752    \\ \hline
 grd-g                  & 0.329     & 1.276    \\ \hline
 \end{tabular}
+\caption{CPU idők \hspace{\textwidth}Forrás: \cite{liu2008handwritten}}
+\label{cpu_times}
 \end{table}
 
 \subsection{Korlátozás nélküli minták}
 A korlátozás nélküli kézzel készített mintákkal rendelkező képzési osztályozók képesek lesznek javítani a korlátozás nélküli karakterfelismerés pontosságát. A korlátozás nélküli karakterek nagy adatbázisának gyűjtése sürgős feladat lesz a közeljövőben.
 
-Ha a hibaarányt meglehetősen alacsony szintre szeretné csökkenteni (például 2\% -ot az elszigetelt karakterek esetében), egyszerűen csak az aktuális normalizációs és funkciókivonási módszerek használata nem elegendőek. A normalizálás, a funkciókivonás és az osztályozó kialakításának módszereit újra kell gondolni a írásjelek jobb felismerésére. A képzési osztályozók diszkriminatív módon javíthatják a kézírásos és a korlátozás nélküli karakterfelismerés pontosságát.
+Ha a hibaarányt meglehetősen alacsony szintre szeretné csökkenteni (például 2\% -ot az elszigetelt karakterek esetében), egyszerűen csak az aktuális normalizációs és jellemző kinyerési módszerek használata nem elegendőek. A normalizálás, a jellemző kinyerés és az osztályozó kialakításának módszereit újra kell gondolni a írásjelek jobb felismerésére. A képzési osztályozók diszkriminatív módon javíthatják a kézírásos és a korlátozás nélküli karakterfelismerés pontosságát.
