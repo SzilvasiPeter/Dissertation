@@ -1,13 +1,30 @@
 \Chapter{Összegzés}
 
-A dolgozat ismerteti a kínai karakterek alapfelépítését, írási módjukat, bemutatja azok építőelemeit az alapvonásokat (strokes). Ezt követően bemutatta a vonásrendek szabályait, amely hasznos az online karakterfelismerésnél.
+A dolgozatomban ismertetésre került a kínai karakterek felépítése, írási módjuk, bemutatva azok építőelemeit az alapvonásokat (\textit{strokes}). Ezt követően bemutattam a vonásrendek szabályait, amely hasznos az online karakterfelismerésnél.
 
-Részletezésre került az optikai karakterfelismerés (OCR) müködése, annak részei. Mivel a probléma már rég óta közismert, ezért áttekintésre kerültek a manapság használt OCR-es megoldások, amelyek képesek felismerni a nyomtatott kínai karaktereket különböző betűtípuson.
+Részletezésre került az optikai karakterfelismerés (OCR) müködése, annak részei. Mivel a probléma már rég óta közismert, ezért áttekintésre kerültek a manapság használt OCR-es megoldások, amelyek képesek felismerni a különböző betűtípusokkal nyomtatott kínai karaktereket.
 
-A jellemző kinyerés fontos szakasz az osztályozás elött. A dimenzió csökkentése csökkenti a futási időt a későbbi szakaszokban. Ez lehetővé teszi a magasabb összetettségű algoritmusok használatát, több hiperparaméter keresését, vagy több értékelés elvégzését. A fontos jellemzők megtalálása kulcsfontosságú a osztályozás során.
+A jellemző kinyerés fontos szakasz az osztályozás elött. A dimenziószám redukálása csökkenti a futási időt a későbbi szakaszokban. Ez lehetővé teszi a magasabb összetettségű algoritmusok használatát, több hiperparaméter keresését, vagy több értékelés elvégzését. A fontos jellemzők megtalálása kulcsfontosságú az osztályozás során.
 
-A tématerület bemutatásához szükségesnek látszott a neurális hálózat alapvető elemeinek, tanítási és tesztelési módjának bemutatása. Ezt követően a képfelismeréshez leginkább ajánlott (az elérhető irodalmak alapján vélhetően a leghatékonyabb) konvolúciós neurális hálózatra (CNN) esett a választás. Az ezzel foglalkozó fejezet kifejti a CNN rétegeinek működését, továbbá bemutatott egy aránylag aktuális kutatási eredményt, amely a felismerés pontosságát hasonlítja össze különböző hálózat architektúrák szerint.
+A tématerület bemutatásához szükségesnek látszott a neurális hálózat alapvető elemeinek, tanítási és tesztelési módjának bemutatása. Ezt követően a képfelismeréshez leginkább ajánlott (az elérhető irodalmak alapján vélhetően a leghatékonyabb) konvolúciós neurális hálózatra (CNN) esett a választás. Az ezzel foglalkozó fejezet kifejti a CNN rétegeinek működését, továbbá bemutat egy aránylag aktuális kutatási eredményt, amely a felismerés pontosságát hasonlítja össze különböző hálózat architektúrák szerint.
 
-A tervezés során bemutattam a Keras könyvtárat. Eleinte bonyolultnak tűnő konvolúciós és hagyományos neurális hálózat könnyedén implementálható a Keras segítségével. A megfelelő csomagok importálása után részleteztem a rétegek müködését. Egy egyszerű architektúrát építettem ki.
+A tervezés során bemutattam a \textit{Keras} könyvtárat. Eleinte bonyolultnak tűnő konvolúciós és hagyományos neurális hálózat könnyedén implementálható a \textit{Keras} segítségével. A megfelelő csomagok importálása után részleteztem a rétegek müködését. Egy egyszerű architektúrát építettem ki.
 
-A validáció során betekintést nyerhetünk, az eredmények ellenőrzéséhez összeállított adathalmazba, és hogy hogyan változik a hálózat osztályozási hatékonysága a bemeneti képek és a zajjal való terhelés hatására. Összességében tehát a generált, zajjal terhelt mintákkal történő tanítási módszer javítja a konvoluciós neurális háló által adott karakterfelismerés pontosságát a zajos képek esetében.
+A validáció során betekintést nyerhetünk az eredmények ellenőrzéséhez összeállított adathalmazba, és hogy hogyan változik a hálózat osztályozási hatékonysága a bemeneti képek és a zajjal való terhelés hatására. Összességében tehát a generált, zajjal terhelt mintákkal történő tanítási módszer jól kombinálható a konvolúciós neurális háló alapú osztályozási módszerrel.
+
+\pagebreak
+
+\section*{Summary}
+
+In this work, I have presented the structure and the drawing of the hand-written chinese characters. Its basic elements are called strokes. After, I have considered the rules of the stroke ordering which are very useful for online character recognition.
+
+The \textit{Optical Character Recognition} has presented in details. The original problem is well-known from a long time. Therefore, I have reviewed the contemporary methods of these OCR solutions, which are able to recognize different kind of chinese fonts.
+
+The feature extraction is an essential step of the character recognition process. By reducing the number of dimensions it can be achieved better calculation times. It makes available the usage of more complex algorithms, larger number of optimization parameters or larger count of evaluations. The determination of important features has a key role in the classification process.
+
+It seems to be necessary to consider the basic theory of artificial neural networks. It consists the learning algorithm, the testing steps. Furthermore, I have checked the proposed algorithms of the image recognition methods according to the literature. As the result of this research, I have decided to use the \textit{Convolutional Neural Network}. I have describes its mechanisms in details in a chapter. It shows a relatively new results in this topic, which compares the accuracy of this solution and consider its network architecture.
+
+I have used the \textit{Keras} software library. It seems to be complicated in the first time, but it makes easier the implementation of CNN networks. I have shown the details of the implementation and the layers of the networks. I have used an own, simple network architecture.
+
+In the validation phase, we can show the checking of the results of this work. I showed the sample sets and the changing of the classification accuracy when we use additional noises. Summary, the learning method by generated noise can be combined well with the methods of convolutional neural network based classification process.
+ 

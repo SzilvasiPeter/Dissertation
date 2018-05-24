@@ -2,7 +2,7 @@
 
 % TODO: Minél több konkrét példával, és számszerű eredménnyel szemléltetni a program működését és hatékonyságát!
 
-\section{Adathalmaz}
+\section{Adathalmazok előállítás szerint}
 
 A kínai karaktereket különböző kategóriákba is besorolhatjuk az előállításuk szerint.
 \begin{itemize}
@@ -17,13 +17,13 @@ Grafika szempontjából két csoportra gondolhatunk generálás során.
 	\end{itemize}
 \end{itemize}
 
-A generált adathalmazokat használata elönyös, hiszen nincs hozzáférési kötöttség az adatokhoz. Továbbá rugalmas, hiszen a modell változtatásával könnyedén lehet különböző karaktereket létrehozni (akár nem látottakat is). A minták generálása során vektoros grafikát használtam.
+A generált adathalmazokat használata elönyös, hiszen nincs hozzáférési kötöttség az adatokhoz. Továbbá rugalmas, hiszen a modell változtatásával könnyedén lehet különböző karaktereket létrehozni (akár nem látottakat is).
 
 \subsection{A mintaadatok előkészítése a tanításhoz}
 
 A tanító mintáknak különböznie kell a tesztelési mintáktól. A tanítási mintahalmazra a hálózat pontossága magasabb, hiszen a tesztelési pontokat nem ismeri.
 
-Az arányok megválasztásánál gyakori a 80/20 (tanító/tesztelő) arány. Az én esetemben 4GB tanító 1GB tesztelő adathalmazt használok.
+Az arányok megválasztásánál gyakori a 80/20 (tanító/tesztelő) arány. Az én esetemben 4GB tanító 1GB tesztelő adathalmazt használok. A tanítás ideje 17 órát vett igénybe. A használt hardver: CPU - 5 mag 2.8Ghz, RAM - 4GiB. A tanítás 3200 epoch-ból állt.
 
 Az offline adatokkal végzem el a tanítást. \Aref{fig:offline_dataset}. ábrán láthatunk példát a kínai karakterekre.
 
@@ -67,7 +67,7 @@ A tesztelés során megvizsgálom, hogy mennyire érzékenyek az adott zajok a h
 
 Felismerés zajok szerint:
 \begin{itemize}
-\item Zaj nélküli: A kép zajjal nincs terhelve. A felismerés ebben az esetben a legmagasabb a zaj nélküli mintákra (90+\%), viszont a zajosított képeket nehezen ismeri fel.\Aref{fig:original} ábrán látható az eredti kép.
+\item Zaj nélküli: A kép zajjal nincs terhelve. A felismerés ebben az esetben a legmagasabb a zaj nélküli mintákra (90+\%), viszont a zajosított képeket nehezen ismeri fel. \Aref{fig:original} ábrán látható az eredti kép.
 
 \begin{figure}[h!]
 	\centering

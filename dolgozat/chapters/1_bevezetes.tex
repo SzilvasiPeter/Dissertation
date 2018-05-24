@@ -1,19 +1,17 @@
 \Chapter{Bevezetés}
 
-% TODO: Feature extraction-t, tesztelést, validálási módokat érdemes hangsúlyozni majd.
+Annak ellenére, hogy az esetek jelentős részében már elektronikus formában kezeljük a dokumentumokat, még mindig fontos szerepük van a papír alapú és szkennelt dokumentumoknak. Ezek elektronikussá alakítása továbbra is nagy gazdasági jelentőségű problémát jelent.
 
-Annak ellenére, hogy széles körben elterjedt az elektronikus formában való megjelenítés, a kézzel írt anyag átalakítása elektronikus formában továbbra is nagy gazdasági jelentőségű problémát jelent.
+Bár léteznek kielégítő megoldások a nyomtatott dokumentumok átalakítására, különösen a kézírással írott szövegek digitalizálása még mindig komoly kihívást jelent.
 
-Bár léteznek kielégítő megoldások a nyomtatott dokumentumok átalakítására, különösen a római ábécé számára. A kézírással kapcsolatos megoldások még mindig sok kihívással szembesülnek. 
+A különböző nyelvű karakterek felismerése alapvetően képfeldolgozási és gépi tanulási módszerekre épülnek. Ezek lényeges lépései például a zajcsökkentés, a jellemzők kinyerése, vonalak szegmentálása. A felismerési módszerek nyelvenként és karakterkészletenként lényeges eltéréseket mutatnak.
 
-A különböző nyelvek felismerésére szolgáló módszerek tekintetében sok hasonlóságot mutat a képfeldolgozás és a dokumentum előfeldolgozás, például zajcsökkentés, jellemző kinyerés, vonal szegmentálás stb. A felismerési módszerek feltétlenül eltérnek egymástól.
+Az kézírásos kínai karakter felismerés alapvetően nehéz felismerési probléma. A karakterek száma (így a későbbiekben az osztályok száma) nagyon nagy, sok karakter különösen összetett szerkezetű. Egyesek nagyon hasonlónak tűnnek, és a pontos szegmentálás többnyire nagyon nehéz.
 
-Az kézírásos kínai karakter felismerés alapvetően nehéz felismerési probléma. Alapvetően a karakterek száma (osztályok) nagyon magas, sok karakter nagyon összetett szerkezetű egyesek nagyon hasonlónak tűnnek, és a pontos szegmentálás nagyon sok helyzetben nagyon nehéz.
+A dolgozatom során a kínai kézírási felismerés módszertanát szeretném bemutatni. Ennek megközelítéséhez több aktuális irodalmat dolgoztam fel. A dolgozatom bemutatja a kínai karakterek alapvető felépítését, majd az optikai karakter felismerő (OCR -- \textit{Optical Character Recognition}) rendszerek működésére térek ki.
 
-A dolgozatom során a kínai kézírási felismerés módszertanját szeretném bemutatni. Ennek megközelítéséhez több aktuális irodalmat dolgoztam fel. A dolgozatom bemutatja a kínai karakterek alapvető felépítését. Majd az optikai karakter felismerő (OCR) rendszerek működésére térek ki.
+Különösebb figyelmet fordítottam a kínai karakterek jellemzőinek kinyerésére. A jellemző kinyerés fontos feladat, mert ezek adják azt a keresési teret, amelyben a gépi tanulásos módszerek az osztályozási problémát meg tudják oldani. Továbbá a jellemző kinyerés segít a fejlesztőknek, hogy csak a legfontosabb, a későbbi feldolgozáshoz hasznos adatokat használják a gépi tanulás során, ami drasztikusan csökkenti számítási és tárolási költségeket.
 
-Különösebb figyelmet fordítottam a kínai karakterek jellemzőinek kinyerésére. A jellemző kinyerés fontos feladat, mert ezek a technikák használatával hatékonyabb gépi tanulást érhetünk el.
+Részletezem a konvolúciós mesterséges neurális hálózatokat (CNN -- \textit{Convolutional Neural Network}), amely különös nagy áttörés az objektumfelismerés témakörében. A rendszer nem csak a kínai karakterek felismerésére használható, hanem bármilyen más problémakör megoldható vele. A bemeneti képektől függ a hálózat tanulása. Az egyetlen hátránya a tanításhoz szükséges adatok mérete, de manapság egyre több adathalmaz válik publikusan elérhetővé. A dolgozatomban elsősorban ezen hálózat típus alkalmazási módját mutatom be kínai karakterek felismerése kapcsán.
 
-Továbbá a jellemző kinyerés segít a fejlesztőknek, hogy csak a legfontosabb és hasznos adatokat használják a gépi tanulás során, ami drasztikusan csökkenti a költségeket és az adatmennyiséget.
-
-Majd részletezem a konvolúciós hálózat, ami különös nagy áttörés az objektum felismerés témakörében. A rendszer nem csak a kínai karakterek felismerésére használható, hanem bármilyen más problémakör megoldható vele. A bemeneti képektől függ a hálózat tanulása. Az egyetlen hátránya a tanításhoz szükséges adatok mérete, de manapság egyre több adathalmaz válik publikussá.
+A kínai karakterek felismerésével már korábban egy TDK dolgozat formájában foglalkoztam \cite{tdk}. Abban elsősorban a tanításhoz használt minták generálási módjával foglalkoztam. Jelen dolgozat a jellemzők kinyerésére összpontosít.
