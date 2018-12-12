@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+
+% Set margins
+\usepackage[hmargin=3cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Enumeration
+\usepackage{enumitem}
+
+% Links
+\usepackage{hyperref}
+
+\linespread{1.2}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\section*{Summary}
+
+\textit{Péter Szilvási: Recognition of Chinese Characters by the Usage of Convolutional Neural Network}
+
+\bigskip
+
+In this work, I have presented the structure and the drawing of the hand-written chinese characters. Its basic elements are called strokes. After, I have considered the rules of the stroke ordering which are very useful for online character recognition.
+
+The \textit{Optical Character Recognition} has presented in details. The original problem is well-known from a long time. Therefore, I have reviewed the contemporary methods of these OCR solutions, which are able to recognize different kind of chinese fonts.
+
+The feature extraction is an essential step of the character recognition process. By reducing the number of dimensions it can be achieved better calculation times. It makes available the usage of more complex algorithms, larger number of optimization parameters or larger count of evaluations. The determination of important features has a key role in the classification process.
+
+It seems to be necessary to consider the basic theory of artificial neural networks. It consists the learning algorithm, the testing steps. Furthermore, I have checked the proposed algorithms of the image recognition methods according to the literature. As the result of this research, I have decided to use the \textit{Convolutional Neural Network}. I have describes its mechanisms in details in a chapter. It shows a relatively new results in this topic, which compares the accuracy of this solution and consider its network architecture.
+
+I have used the \textit{Keras} software library. It seems to be complicated in the first time, but it makes easier the implementation of CNN networks. I have shown the details of the implementation and the layers of the networks. I have used an own, simple network architecture.
+
+In the validation phase, we can show the checking of the results of this work. I showed the sample sets and the changing of the classification accuracy when we use additional noises. Summary, the learning method by generated noise can be combined well with the methods of convolutional neural network based classification process.
+
+\end{document}
+
