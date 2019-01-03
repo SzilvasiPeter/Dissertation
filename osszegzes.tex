@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+
+% Set margins
+\usepackage[hmargin=3cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Enumeration
+\usepackage{enumitem}
+
+% Links
+\usepackage{hyperref}
+
+\linespread{1.2}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\section*{Összegzés}
+
+\textit{Szilvási Péter: Kínai karakterek felismerése konvolúciós neurális hálók használatával}
+
+\bigskip
+
+A dolgozatomban ismertetésre került a kínai karakterek felépítése, írási módjuk, bemutatva azok építőelemeit az alapvonásokat (\textit{strokes}). Ezt követően bemutattam a vonásrendek szabályait, amely hasznos az online karakterfelismerésnél.
+
+Részletezésre került az optikai karakterfelismerés (OCR) müködése, annak részei. Mivel a probléma már rég óta közismert, ezért áttekintésre kerültek a manapság használt OCR-es megoldások, amelyek képesek felismerni a különböző betűtípusokkal nyomtatott kínai karaktereket.
+
+A jellemző kinyerés fontos szakasz az osztályozás elött. A dimenziószám redukálása csökkenti a futási időt a későbbi szakaszokban. Ez lehetővé teszi a magasabb összetettségű algoritmusok használatát, több hiperparaméter keresését, vagy több értékelés elvégzését. A fontos jellemzők megtalálása kulcsfontosságú az osztályozás során.
+
+A tématerület bemutatásához szükségesnek látszott a neurális hálózat alapvető elemeinek, tanítási és tesztelési módjának bemutatása. Ezt követően a képfelismeréshez leginkább ajánlott (az elérhető irodalmak alapján vélhetően a leghatékonyabb) konvolúciós neurális hálózatra (CNN) esett a választás. Az ezzel foglalkozó fejezet kifejti a CNN rétegeinek működését, továbbá bemutat egy aránylag aktuális kutatási eredményt, amely a felismerés pontosságát hasonlítja össze különböző hálózat architektúrák szerint.
+
+A tervezés során bemutattam a \textit{Keras} könyvtárat. Eleinte bonyolultnak tűnő konvolúciós és hagyományos neurális hálózat könnyedén implementálható a \textit{Keras} segítségével. A megfelelő csomagok importálása után részleteztem a rétegek müködését. Egy egyszerű architektúrát építettem ki.
+
+A validáció során betekintést nyerhetünk az eredmények ellenőrzéséhez összeállított adathalmazba, és hogy hogyan változik a hálózat osztályozási hatékonysága a bemeneti képek és a zajjal való terhelés hatására. Összességében tehát a generált, zajjal terhelt mintákkal történő tanítási módszer jól kombinálható a konvolúciós neurális háló alapú osztályozási módszerrel.
+
+\end{document}
+
