@@ -238,9 +238,25 @@ Test & 99.71 & 99.50 & 99.80 & 99.09\\
 
 \begin{itemize}
 \item Irány dekompozíció
+	\begin{itemize}
+		\item Négy irányú bontást felváltotta a nyolc irányú
+		\item Sobel operátor\\
+		\begin{center}
+			\includegraphics[scale=0.3]{sobel_operator}
+		\end{center}
+	\end{itemize}
 \item Elmosódás és mintavétel
-\item Számítási idők
+	\begin{itemize}
+		\item Gauss függvény: $$
+g(x,y) = \frac{1}{\sqrt{2\pi}\sigma} e^{{(- \frac{x^2 + y^2}{2 \sigma_x^2})}}
+$$
+	\end{itemize}
 \item Korlátozás nélküli minták
+	\begin{itemize}
+		\item Normalizálás
+		\item Jellemző kinyerés
+		\item Osztályozó modell
+	\end{itemize}
 \end{itemize}
 
 \end{frame}

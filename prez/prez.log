@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.3)  4 JAN 2019 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.3)  4 JAN 2019 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1449,20 +1449,27 @@ Package pdftex.def Info: ../dolgozat/images/deep_autoencoder.png  used on input
 ]
 \openout4 = `prez.vrb'.
 
- (./prez.vrb) [8
+ (./prez.vrb
+<../dolgozat/images/sobel_operator.png, id=232, 352.31625pt x 151.56625pt>
+File: ../dolgozat/images/sobel_operator.png Graphic file (type png)
+<use ../dolgozat/images/sobel_operator.png>
+Package pdftex.def Info: ../dolgozat/images/sobel_operator.png  used on input l
+ine 9.
+(pdftex.def)             Requested size: 105.69568pt x 45.47021pt.
+) [8
 
-]
+ <../dolgozat/images/sobel_operator.png>]
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/ANNParts.png, id=259, 602.25pt x 351.3125pt>
+<../dolgozat/images/ANNParts.png, id=264, 602.25pt x 351.3125pt>
 File: ../dolgozat/images/ANNParts.png Graphic file (type png)
 <use ../dolgozat/images/ANNParts.png>
 Package pdftex.def Info: ../dolgozat/images/ANNParts.png  used on input line 15
 .
 (pdftex.def)             Requested size: 240.89572pt x 140.5225pt.
 )
-Overfull \vbox (10.51923pt too high) detected at line 266
+Overfull \vbox (10.51923pt too high) detected at line 282
  []
 
 [9
@@ -1471,13 +1478,13 @@ Overfull \vbox (10.51923pt too high) detected at line 266
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/convolution.png, id=289, 1021.8175pt x 622.325pt>
+<../dolgozat/images/convolution.png, id=294, 1021.8175pt x 622.325pt>
 File: ../dolgozat/images/convolution.png Graphic file (type png)
 <use ../dolgozat/images/convolution.png>
 Package pdftex.def Info: ../dolgozat/images/convolution.png  used on input line
  8.
 (pdftex.def)             Requested size: 153.266pt x 93.34471pt.
-<../dolgozat/images/maxpool.png, id=290, 789.95125pt x 369.38pt>
+<../dolgozat/images/maxpool.png, id=295, 789.95125pt x 369.38pt>
 File: ../dolgozat/images/maxpool.png Graphic file (type png)
 <use ../dolgozat/images/maxpool.png>
 Package pdftex.def Info: ../dolgozat/images/maxpool.png  used on input line 8.
@@ -1494,7 +1501,7 @@ g>]
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/CNN_CCR_working.png, id=317, 672.5125pt x 311.1625pt>
+<../dolgozat/images/CNN_CCR_working.png, id=322, 672.5125pt x 311.1625pt>
 File: ../dolgozat/images/CNN_CCR_working.png Graphic file (type png)
 <use ../dolgozat/images/CNN_CCR_working.png>
 Package pdftex.def Info: ../dolgozat/images/CNN_CCR_working.png  used on input 
@@ -1511,7 +1518,7 @@ Overfull \hbox (18.8783pt too wide) in paragraph at lines 4--5
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/architecture.png, id=344, 603.25375pt x 432.61626pt>
+<../dolgozat/images/architecture.png, id=349, 603.25375pt x 432.61626pt>
 File: ../dolgozat/images/architecture.png Graphic file (type png)
 <use ../dolgozat/images/architecture.png>
 Package pdftex.def Info: ../dolgozat/images/architecture.png  used on input lin
@@ -1533,7 +1540,7 @@ Overfull \hbox (12.58585pt too wide) in paragraph at lines 18--19
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/offline_dataset4x3.jpg, id=401, 75.28125pt x 58.71938pt>
+<../dolgozat/images/offline_dataset4x3.jpg, id=406, 75.28125pt x 58.71938pt>
 File: ../dolgozat/images/offline_dataset4x3.jpg Graphic file (type jpg)
 <use ../dolgozat/images/offline_dataset4x3.jpg>
 Package pdftex.def Info: ../dolgozat/images/offline_dataset4x3.jpg  used on inp
@@ -1549,23 +1556,23 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \openout4 = `prez.vrb'.
 
  (./prez.vrb
-<../dolgozat/images/original.png, id=429, 42.1575pt x 64.24pt>
+<../dolgozat/images/original.png, id=434, 42.1575pt x 64.24pt>
 File: ../dolgozat/images/original.png Graphic file (type png)
 <use ../dolgozat/images/original.png>
 Package pdftex.def Info: ../dolgozat/images/original.png  used on input line 6.
 
 (pdftex.def)             Requested size: 21.07869pt x 32.11992pt.
-<../dolgozat/images/noise.png, id=430, 42.1575pt x 64.24pt>
+<../dolgozat/images/noise.png, id=435, 42.1575pt x 64.24pt>
 File: ../dolgozat/images/noise.png Graphic file (type png)
 <use ../dolgozat/images/noise.png>
 Package pdftex.def Info: ../dolgozat/images/noise.png  used on input line 7.
 (pdftex.def)             Requested size: 21.07869pt x 32.11992pt.
-<../dolgozat/images/rotate.png, id=431, 42.1575pt x 64.24pt>
+<../dolgozat/images/rotate.png, id=436, 42.1575pt x 64.24pt>
 File: ../dolgozat/images/rotate.png Graphic file (type png)
 <use ../dolgozat/images/rotate.png>
 Package pdftex.def Info: ../dolgozat/images/rotate.png  used on input line 8.
 (pdftex.def)             Requested size: 21.07869pt x 32.11992pt.
-<../dolgozat/images/blur.png, id=432, 42.1575pt x 64.24pt>
+<../dolgozat/images/blur.png, id=437, 42.1575pt x 64.24pt>
 File: ../dolgozat/images/blur.png Graphic file (type png)
 <use ../dolgozat/images/blur.png>
 Package pdftex.def Info: ../dolgozat/images/blur.png  used on input line 9.
@@ -1600,45 +1607,48 @@ G copy)> <../dolgozat/images/rotate.png> <../dolgozat/images/blur.png (PNG copy
 \tf@snm=\write10
 \openout10 = `prez.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 452.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
  (./prez.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 452.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 468.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
 Package rerunfilecheck Info: File `prez.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24319 strings out of 492982
- 459281 string characters out of 6134897
+ 24330 strings out of 492982
+ 459638 string characters out of 6134897
  558416 words of memory out of 5000000
- 27241 multiletter control sequences out of 15000+600000
+ 27251 multiletter control sequences out of 15000+600000
  26257 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,64p,771b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont
-/lcircle1.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi1095.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfss0600.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfss0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfss0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfss1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fss1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx0600.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfsx0800.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-sx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on prez.pdf (18 pages, 512997 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfss0500.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfss0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0700.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfsx0600.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfsx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sftt1095.pfb>
+Output written on prez.pdf (18 pages, 546777 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 539 compressed objects within 6 object streams
+ 634 PDF objects out of 1000 (max. 8388607)
+ 548 compressed objects within 6 object streams
  37 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
