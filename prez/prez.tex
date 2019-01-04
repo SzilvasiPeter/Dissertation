@@ -214,8 +214,20 @@ Test & 99.71 & 99.50 & 99.80 & 99.09\\
 
 \begin{itemize}
 \item Éldetektálás
+	\begin{itemize}
+		\item Kép fényerejének hirtelen változása
+	\end{itemize}
 \item Sarokérzékelés
+	\begin{itemize}
+		\item Harris és Stephens algoritmus
+		\item \(\sum (I_x)^2, \sum (I_y)^2 \)
+		\item Elforgatott kép: ${\begin{bmatrix}\sum I_{x}^{2} &\sum I_{x}I_{y} \\\sum I_{x}I_{y} &\sum I_{y}^{2} \end{bmatrix}}$
+	\end{itemize}
 \item Skála invariáns jellemző transzformáció (SIFT, \textit{Scale Invariant Feature Transform})
+	\begin{itemize}
+		\item Kulcspontok megtalálása
+		\item Euklideszi távolság
+	\end{itemize}
 \end{itemize}
 
 \end{frame}
