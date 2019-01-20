@@ -88,7 +88,7 @@ rulecolor=\color{keret}
 hálók használatával}
 }
 \author[Szilvási Péter]{\Large Szilvási Péter}
-\date{Miskolci Egyetem, 2019. január 24.}
+\date{Miskolci Egyetem, 2019. január 18.}
 
 % --------------------
 % Title page
@@ -96,38 +96,20 @@ hálók használatával}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{Kínai karakterek felismerése}
+\frametitle{Kínai karakterek felépítése}
 
-\begin{tabular}{c c}
-{\large Vonások, vonás sorrend} & 
-\includegraphics[scale=0.3, center]{vonasrend_ordered}
-\end{tabular}
-
-\begin{enumerate}
-\item A vízszintes vonások megelőzik a függőleges vonásokat.
-\item A balra lejtő vonások megelőzik a jobbra lejtő vonásokat.
-\item Az írásjegyek írását felülről kell kezdeni.
-\item Az írásjegyet balról jobbra haladva építik fel.
-\item A felülről keretezett írásjegyeknél előbb a keretet kell meghúzni.
-\item Az alulról keretezett írásjegyeknél a keretet legvégül kell meghúzni.
-\item A teljes keretet mindig legvégül kell bezárni.
-\end{enumerate}
+\includegraphics[scale=0.6, center]{vonasrend}
 
 \end{frame}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{OCR megvalósítások}
+\frametitle{OCR}
 
 \begin{itemize}
 \item Dokumentumok digitalizálása
-\item OCR részei: szkennelő fej + szoftver [1]
-\item Feldolgozási szintek: [2]
-\begin{itemize}
-	\item Alacsony szintű: zajos kép $\rightarrow$ előfeldolgozás $\rightarrow$ javított kép
-	\item Középső szintű: kép $\rightarrow$ szegmentálás $\rightarrow$ kép jellemzők
-	\item Magas szintű: jellemzők $\rightarrow$ osztályozás $\rightarrow$ osztálycímke
-\end{itemize}
+\item Feldolgozási szintek: [2]\\
+	Alacsony szintű \tab Középső szintű \tab Magas szintű
 \end{itemize}
 
 \includegraphics[scale=0.45, center]{ocr}
@@ -140,58 +122,10 @@ hálók használatával}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{OCR megvalósítások}
-
-OCR típusok: \textit{online}, \textit{offline} [3]
-
-\bigskip
-
-{\large Kínai karakter felismerése}
-\begin{itemize}
-\item Zaj szűrés: pontszerű zajok, elmosódás, forgatás, kontraszt
-\item Jellemzők kinyerése
-\end{itemize}
-\includegraphics[scale=0.6, center]{ocr_features}
-
-\end{frame}
-
-% --------------------
-\begin{frame}[fragile]
-\frametitle{OCR megvalósítások}
-\begin{tabular}{c c}
-{\large Egy elterjedt algoritmus [4]} & 
-\includegraphics[scale=0.2, center]{chinese_fonts1}
-\end{tabular}
-\begin{itemize}
-\item Dimenzió redukció
-
-\(d_i = \dfrac{l_i}{\sqrt{\displaystyle \sum_{k=1}^8 l_k^2}}\)
-\begin{tabular}{ c c }
-\includegraphics[scale=0.3]{8direction} & \includegraphics[scale=0.3]{ocr_PDC}
-\end{tabular}
-\item Tanítás
-\item Tesztelés 
-\begin{table}
-\centering
-\begin{tabular}{ |c|c|c|c|c|}
-\hline
-Font & Song & Fang & Kai & Hei\\
-\hline
-Train & 99.82 & 99.64 & 99.81 & 99.57\\
-\hline
-Test & 99.71 & 99.50 & 99.80 & 99.09\\
-\hline
-\end{tabular}
-\end{table}
-\end{itemize}
-\end{frame}
-
-% --------------------
-\begin{frame}[fragile]
 \frametitle{Jellemzők kinyerése, Dimenzió redukció}
 
 \begin{itemize}
-\item Főkomponens analízis (\textit{Principle Component Analysis})
+\item Főkomponens analízis (\textit{PCA})
 	\begin{itemize}
 		\item Magas dimenzió $\rightarrow$ Alsó dimenzió
 		\item \(Av = \lambda v\)
@@ -204,59 +138,6 @@ Test & 99.71 & 99.50 & 99.80 & 99.09\\
 	\begin{center}
 		\includegraphics[scale=0.3]{deep_autoencoder}
 	\end{center}
-\end{itemize}
-
-\end{frame}
-
-% --------------------
-\begin{frame}[fragile]
-\frametitle{Alacsony szintű jellemzők}
-
-\begin{itemize}
-\item Éldetektálás
-	\begin{itemize}
-		\item Kép fényerejének hirtelen változása
-	\end{itemize}
-\item Sarokérzékelés
-	\begin{itemize}
-		\item Harris és Stephens algoritmus
-		\item \(\sum (I_x)^2, \sum (I_y)^2 \)
-		\item Elforgatott kép: ${\begin{bmatrix}\sum I_{x}^{2} &\sum I_{x}I_{y} \\\sum I_{x}I_{y} &\sum I_{y}^{2} \end{bmatrix}}$
-	\end{itemize}
-\item Skála invariáns jellemző transzformáció (SIFT, \textit{Scale Invariant Feature Transform})
-	\begin{itemize}
-		\item Kulcspontok megtalálása
-		\item Euklideszi távolság
-	\end{itemize}
-\end{itemize}
-
-\end{frame}
-
-% --------------------
-\begin{frame}[fragile]
-\frametitle{Irány szerinti jellemző kinyerés}
-
-\begin{itemize}
-\item Irány dekompozíció
-	\begin{itemize}
-		\item Négy irányú bontást felváltotta a nyolc irányú
-		\item Sobel operátor\\
-		\begin{center}
-			\includegraphics[scale=0.3]{sobel_operator}
-		\end{center}
-	\end{itemize}
-\item Elmosódás és mintavétel
-	\begin{itemize}
-		\item Gauss függvény: $$
-g(x,y) = \frac{1}{\sqrt{2\pi}\sigma} e^{{(- \frac{x^2 + y^2}{2 \sigma_x^2})}}
-$$
-	\end{itemize}
-\item Korlátozás nélküli minták
-	\begin{itemize}
-		\item Normalizálás
-		\item Jellemző kinyerés
-		\item Osztályozó modell
-	\end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -309,15 +190,10 @@ Backpropagation
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{A háló felépítése}
+\frametitle{Felismerés}
 
 % 4.10-es ábra
 \includegraphics[scale=0.485]{CNN_CCR_working}
-
-\begin{itemize}
-\item Tesztelés
-\item Transfer learning
-\end{itemize}
 
 \end{frame}
 
@@ -326,101 +202,82 @@ Backpropagation
 \frametitle{A hálózat architektúrája}
 
 % 5.2 ábra
-\includegraphics[scale=0.5]{architecture}
+\begin{center}
+	\includegraphics[scale=0.35]{NetworkArch}
+\end{center}
 
 \end{frame}
 
-% --------------------
-\begin{frame}[fragile]
-\frametitle{A hálózat architektúrája}
-
-\begin{lstlisting}
-model.add(
-Convolution2D(1,	# filter retegek szama    
-              3, 3,	# 3x3 kernel meret 
-              strides=(1,1) # lepes
-              input_shape=image))
-\end{lstlisting}
-\begin{lstlisting}
-model.add(MaxPooling2D(pool_size=(2,2)))
-\end{lstlisting}
-\begin{lstlisting}
-model.compile(loss='mean_squared_error', # Hiba
-optimizer='adam', metrics=['accuracy'])
-
-model.fit_generator(generator=training_data,
-steps_per_epoch=1000, epochs=10)	# Tanitas
-\end{lstlisting}
-
-\end{frame}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{Az offline adatbázis}
+\frametitle{Előfeldolgozás}
 
 Adathalmaz: nyomtatott, kézzel írott, generált
 
 \medskip
 
-\includegraphics[scale=1.5, center]{offline_dataset4x3}
+\includegraphics[scale=0.3, center]{input_images}
 
 \begin{itemize}
-\item Tanító/Teszt(80/20), \texttt{random.shuffle(self.images)}
-\item Tanító minták változatossága
-\item Tesztelés módja
-\item Helyesség ellenőrzése
+\item Kép manipulálás:\\
+Átméretezés \tab Forgatás \tab Zajosítás \tab Vágás\\
+\begin{lstlisting} 
+def resize():	def rotate():	def noise():
+\end{lstlisting}
+\item Konvertálás:\\
+\begin{lstlisting}
+for myFile in files:
+    image = cv2.imread (myFile)
+    train.append (image)
+    train_labels.append([1., 0., 0., 0., 0.])
+    
+np.reshape() -> np.save()
+\end{lstlisting}
 \end{itemize}
 
 \end{frame}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{A felismerés hatékonysága}
+\frametitle{Futtatás}
+\begin{lstlisting}
+time python3 train.py | tee log
 
-% Eredmények konkrét százalékokkal
-\begin{table}
-\begin{tabular}{l c c}
-0\%\tab $\rightarrow$\tab & \includegraphics[scale=0.5]{original} & \tab $\rightarrow$\tab 90-95\% \\
-75-80\%\tab $\rightarrow$\tab & \includegraphics[scale=0.5]{noise} & \tab $\rightarrow$\tab 84\% \\
- 68\%\tab $\rightarrow$\tab & \includegraphics[scale=0.5]{rotate} & \tab $\rightarrow$\tab 75\% \\
- 87\%\tab $\rightarrow$\tab & \includegraphics[scale=0.5]{blur} & \tab $\rightarrow$\tab 93\% \\
-\end{tabular}
-\end{table}
+Epoch 1/80
+  12/2000 [............] loss:0.6964 acc: 0.7833
+  24/2000 [............] loss:0.7951 acc: 0.7833
+  36/2000 [............] loss:1.0486 acc: 0.7278
+Epoch 80/80
+  1992/2000 [========>.] loss:0.0385 acc:0.9871
+  2000/2000 [==========] loss:0.0383 acc:0.9872
+  
+ real	19m40,397s
+ user	55m4,422s
+ sys	5m41,888s
+\end{lstlisting}
 
 \end{frame}
 
 % --------------------
 \begin{frame}[fragile]
-\frametitle{Összegzés}
+\frametitle{Tesztelés}
 \begin{itemize}
-\item Kínai karakterek
-	\begin{itemize}
-	\item stroke
-	\item vonásrend
-	\end{itemize}
-\item OCR
-	\begin{itemize}
-	\item részei
-	\item használt OCR bemutatás
-	\end{itemize}
-\item Jellemzők kinyerése
-	\begin{itemize}
-	\item dimenzió redukció
-	\item alacsony szintű jellemzők
-	\item irány szerinti jellemző kinyerés
-	\end{itemize}
-\item Neurális hálózatok
-	\begin{itemize}
-	\item hagyományos neurális háló (ANN)
-	\item konvolúciós neurális háló (CNN)
-	\end{itemize}
-\item Validáció
-	\begin{itemize}
-	\item adathalmaz előállítás
-	\item hálózat osztályozása
-	\end{itemize}
+\item Kimenet létrehozés (.cvs) 
+\item Model beolvasás
+\begin{lstlisting}
+model = load_model('model1.h5')
+\end{lstlisting}
+\item Kép átalakítás
+\begin{lstlisting}
+x = x.reshape((28,28,3))
+\end{lstlisting}
+\item Megjósolás
+\begin{lstlisting}
+x = model.predict(x)
+\end{lstlisting}
+\item Eredmény -> Kimeneti fájl
 \end{itemize}
-
 \end{frame}
 
 % --------------------
